@@ -1,15 +1,17 @@
 <?php
 
-use App\Http\Controllers\ConcertController;
-use App\Http\Controllers\OrderController;
-use App\Http\Controllers\TicketController;
+use Inertia\Inertia;
+use App\Models\Album;
 use App\Models\Concert;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\TicketController;
+use App\Http\Controllers\ConcertController;
 
 Route::get('/', function () {
     return Inertia::render('index', [
-        'concerts' => Concert::all()
+        'concerts' => Concert::all(),
+        'albums' => Album::all()
     ]);
 });
 

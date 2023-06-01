@@ -2,10 +2,14 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
 use MoonShine\MoonShine;
-use MoonShine\Menu\MenuGroup;
 use MoonShine\Menu\MenuItem;
+use MoonShine\Menu\MenuGroup;
+use Illuminate\Support\ServiceProvider;
+use App\MoonShine\Resources\AlbumResource;
+use App\MoonShine\Resources\OrderResource;
+use App\MoonShine\Resources\TicketResource;
+use App\MoonShine\Resources\ConcertResource;
 use MoonShine\Resources\MoonShineUserResource;
 use MoonShine\Resources\MoonShineUserRoleResource;
 
@@ -23,8 +27,14 @@ class MoonShineServiceProvider extends ServiceProvider
                     ->icon('bookmark'),
             ])->translatable(),
 
-            MenuItem::make('Documentation', 'https://laravel.com')
-                ->badge(fn() => 'Check'),
+            MenuItem::make('Альбоми групи', new AlbumResource())
+                    ->icon('bookmark'),
+            MenuItem::make('Концерт', new ConcertResource())
+                    ->icon('bookmark'),
+            MenuItem::make('Замовлення', new OrderResource())
+                    ->icon('bookmark'),
+            MenuItem::make('Білети', new TicketResource())
+                    ->icon('bookmark'),
         ]);
     }
 }

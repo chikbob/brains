@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Concert;
 use App\Models\Ticket;
+use App\Models\Album;
 use Inertia\Inertia;
 use Inertia\Response as InertiaPage;
 
@@ -13,7 +14,8 @@ class ConcertController extends Controller
     {
         return Inertia::render('concert/[id]', [
             'concert' => $concert,
-            'tickets' => Ticket::query()->where('concert_id', $concert->id)->get()
+            'tickets' => Ticket::query()->where('concert_id', $concert->id)->get(),
+            'albums' => Album::all()
         ]);
     }
 }

@@ -8,6 +8,9 @@ use App\Models\Ticket;
 use MoonShine\Resources\Resource;
 use MoonShine\Fields\ID;
 use MoonShine\Actions\FiltersAction;
+use MoonShine\Fields\BelongsTo;
+use MoonShine\Fields\Number;
+use MoonShine\Fields\SwitchBoolean;
 
 class TicketResource extends Resource
 {
@@ -19,6 +22,12 @@ class TicketResource extends Resource
 	{
 		return [
 		    ID::make()->sortable(),
+            BelongsTo::make('Concert', 'concert_id')
+            ->required(),
+            SwitchBoolean::make('Avalaible', 'avalaible')
+            ->default(true),
+            Number::make('Price', 'price')
+            ->required()
         ];
 	}
 

@@ -30,7 +30,7 @@ defineProps({
 });
 
 const form = reactive({
-    email: 'hui',
+    email: null,
     ticket_id: 1
 })
 

@@ -11,6 +11,15 @@ import FooterNav from './footer__nav.vue';
 
 <style lang="scss">
 .footer {
-    position: relative;
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    height: 60px;
+    background: #171717;
+    align-content: flex-end;
+    flex-wrap: nowrap;
+    flex-direction: row-reverse;
+    justify-content: center;
+    margin-top: 76px;
 }
 </style>

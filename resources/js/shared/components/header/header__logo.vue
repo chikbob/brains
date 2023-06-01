@@ -1,6 +1,6 @@
 <template>
-    <Link :class="cnHeader('logo')" href="/">
-    <img :class="cnHeader('logo')" src="@/assets/main-logo.png">
+    <Link :class="cnHeader('logo')" href="index.html">
+    <img src="@/assets/images/logo.png" alt="logo.png">
     </Link>
 </template>
 
@@ -10,12 +10,10 @@ import { cnHeader } from "@/shared/components/header/header.const.js";
 </script>
 
 <style lang="scss">
-.header__logo {
-    position: absolute;
-
-    width: 13rem;
-    height: 5.25rem;
-
-    margin-top: 0.25rem;
+.header__logo img{
+    width: 170px;
+    height: 33px;
+    display: flex;
+    margin-left: 40px;
 }
 </style>
