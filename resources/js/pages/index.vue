@@ -75,6 +75,7 @@
 </template>
 
 <script setup>
+import { onMounted } from 'vue'
 import PageLayout from '@/shared/layouts/page-layout/page-layout.vue';
 import { cnIndexScreen } from './index-screen.const';
 
@@ -86,6 +87,10 @@ const props = defineProps({
 })
 
 console.log(props.albums)
+
+onMounted(() => {
+    window.location
+})
 </script>
 
 <style lang="scss">
@@ -130,6 +135,7 @@ console.log(props.albums)
     &-block {
         display: flex;
         justify-content: center;
+        margin-bottom: 76px;
 
         & img {
             margin-top: 60px;
@@ -300,6 +306,7 @@ body {
     border: 0;
 
     position: relative;
+    // height: 3046px;
     width: 100%;
 
     background: url('@/assets/images/background.png');

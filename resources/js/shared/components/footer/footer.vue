@@ -20,6 +20,5 @@ import FooterNav from './footer__nav.vue';
     flex-wrap: nowrap;
     flex-direction: row-reverse;
     justify-content: center;
-    margin-top: 76px;
 }
 </style>

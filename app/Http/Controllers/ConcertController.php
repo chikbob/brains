@@ -18,4 +18,11 @@ class ConcertController extends Controller
             'albums' => Album::all()
         ]);
     }
+
+    public function list(): InertiaPage
+    {
+        return Inertia::render('concert', [
+            'concerts' => Concert::all(),
+        ]);
+    }
 }

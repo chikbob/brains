@@ -19,10 +19,7 @@
             </div>
         </div>
         <div :class="cnHeader('nav-container_right')">
-            <a href="#tour" :class="cnHeader('nav-container_right-link')">TOUR</a>
-            <a href="#group" :class="cnHeader('nav-container_right-link')">GROUP</a>
-            <a href="#music" :class="cnHeader('nav-container_right-link')">MUSIC</a>
-            <a href="#community" :class="cnHeader('nav-container_right-link')">COMMUNITY</a>
+            <a href="/concert" :class="cnHeader('nav-container_right-link')">CONCERTS</a>
         </div>
     </nav>
 </template>
@@ -36,6 +33,7 @@ import { cnHeader } from './header.const';
 .header__nav {
     display: flex;
     flex-direction: row;
+    width: 100%;
 
     &-container {
         display: flex;
@@ -44,9 +42,9 @@ import { cnHeader } from './header.const';
 
         &_right {
             display: flex;
-            margin-left: 23%;
             height: 60px;
-            align-items: flex-end;
+            justify-content: flex-end;
+            margin-right: 60px;
             width: 100%;
 
             &-link {

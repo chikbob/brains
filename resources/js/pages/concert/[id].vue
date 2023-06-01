@@ -1,22 +1,21 @@
 <template>
-    <div>
-        {{ $props }}
-        <form @submit.prevent="submit">
-            <input
-                type="text"
-                v-model="form.email"
-                placeholder="email для покупки"
-            >
-            <button type="submit">
-                Купить
-            </button>
-        </form>
-    </div>
+    <PageLayout>
+        <div>
+            {{ $props }}
+            <form @submit.prevent="submit">
+                <input type="text" v-model="form.email" placeholder="email для покупки">
+                <button type="submit">
+                    Купить
+                </button>
+            </form>
+        </div>
+    </PageLayout>
 </template>
 
 <script setup>
-import {reactive} from "vue";
-import {router} from '@inertiajs/vue3'
+import { reactive } from "vue";
+import { router } from '@inertiajs/vue3'
+import PageLayout from "../../shared/layouts/page-layout/page-layout.vue";
 
 defineProps({
     concert: {
@@ -39,6 +38,4 @@ function submit() {
 }
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
