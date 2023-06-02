@@ -15,6 +15,7 @@ class TicketRequest extends FormRequest
     {
         return [
             'ticket_id' => 'required|exists:tickets,id',
+            'concert_id' => 'required|exists:concerts,id',
             'email' => 'required|email'
         ];
     }

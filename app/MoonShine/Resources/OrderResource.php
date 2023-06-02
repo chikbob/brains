@@ -25,6 +25,8 @@ class OrderResource extends Resource
             ->required(),
             BelongsTo::make('Ticket', 'ticket_id')
             ->required(),
+            BelongsTo::make('Concert', 'concert_id')
+            ->required(),
         ];
 	}
 

@@ -61,11 +61,13 @@ const props = defineProps({
 
 const form = reactive({
     email: null,
+    concert_id: props.concert.id,
     ticket_id: 1
 })
 
 function submit() {
     router.post('/order', form)
+    console.log(form)
 }
 </script>
 

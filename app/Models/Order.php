@@ -16,8 +16,14 @@ class Order extends Model
         return $this->belongsTo(Ticket::class);
     }
 
+    public function concert() 
+    {
+        return $this->belongsTo(Concert::class);
+    }
+
     protected $fillable = [
         'ticket_id',
+        'concert_id',
         'email',
         'hash'
     ];

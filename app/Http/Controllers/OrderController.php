@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Inertia\Inertia;
 use App\Models\Order;
+use App\Models\Concert;
 use Illuminate\Support\Str;
 use App\Http\Requests\TicketRequest;
 use Illuminate\Http\RedirectResponse;
@@ -28,7 +29,8 @@ class OrderController extends Controller
         $order = Order::query()
             ->create([
                 ...$request->validated(),
-                'hash' => Str::uuid()
+                'hash' => Str::uuid(),
+                'concert_id' => $request->concert_id
             ]);
 
         $order->notify(new OrderNotification($order->hash));
