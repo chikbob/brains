@@ -14,6 +14,7 @@ return new class extends Migration
             $table->string('email');
             $table->foreignIdFor(Ticket::class)
                 ->constrained();
+            $table->string('hash');
             $table->timestamps();
         });
     }

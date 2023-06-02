@@ -5,10 +5,11 @@ namespace App\Models;
 use MoonShine\Fields\BelongsTo;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Notifications\Notifiable;
 
 class Order extends Model
 {
-    use HasFactory;
+    use HasFactory, Notifiable;
 
     public function ticket()
     {
@@ -17,6 +18,7 @@ class Order extends Model
 
     protected $fillable = [
         'ticket_id',
-        'email'
+        'email',
+        'hash'
     ];
 }

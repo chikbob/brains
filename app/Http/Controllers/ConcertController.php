@@ -14,8 +14,7 @@ class ConcertController extends Controller
     {
         return Inertia::render('concert/[id]', [
             'concert' => $concert,
-            'tickets' => Ticket::query()->where('concert_id', $concert->id)->get(),
-            'albums' => Album::all()
+            'tickets' => Ticket::all(),
         ]);
     }
 

@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use Inertia\Inertia;
 use App\Models\Order;
+use Illuminate\Support\Str;
 use App\Models\Ticket;
 use Illuminate\Http\Request;
-use Inertia\Inertia;
+use App\Notifications\OrderNotification;
+use App\Http\Requests\TicketRequest;
 use Inertia\Response as InertiaPage;
 
 class TicketController extends Controller

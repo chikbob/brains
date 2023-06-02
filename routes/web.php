@@ -16,7 +16,9 @@ Route::get('/', function () {
 });
 
 Route::get('/concert/{concert}', [ConcertController::class, 'show']);
-Route::get('/concert', [ConcertController::class, 'list']);
+Route::get('/concert', [ConcertController::class, 'list'])
+->name('concert');
 Route::get('/ticket/{ticket}', [TicketController::class, 'show'])->name('ticket.show');
 Route::get('/order/{order}', [OrderController::class, 'show']);
+Route::post('/order', [OrderController::class, 'store']);
 Route::post('/ticket', [TicketController::class, 'store']);

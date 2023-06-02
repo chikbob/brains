@@ -1,7 +1,7 @@
 <template>
-    <Link :class="cnHeader('logo')" href="index.html">
+    <a :class="cnHeader('logo')" href="/">
     <img src="@/assets/images/logo.png" alt="logo.png">
-    </Link>
+    </a>
 </template>
 
 <script setup>

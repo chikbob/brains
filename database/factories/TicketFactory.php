@@ -17,6 +17,7 @@ class TicketFactory extends Factory
     public function definition(): array
     {
         return [
+            'title' => fake()->name(),
             'price' => rand(0, 100)
         ];
     }

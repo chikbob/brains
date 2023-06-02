@@ -21,10 +21,7 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        Concert::factory(10)->create()->each(function (Concert $concert) {
-            Ticket::factory(10)->create([
-                'concert_id' => $concert->id,
-            ]);
-        });
+        Concert::factory(10)->create();
+        Ticket::factory(5)->create();
     }
 }

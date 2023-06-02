@@ -13,11 +13,7 @@ return new class extends Migration {
     {
         Schema::create('tickets', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Concert::class)
-                ->constrained()
-                ->cascadeOnDelete();
-            $table->boolean('available')
-                ->default(true);
+            $table->string('title');
             $table->integer('price');
             $table->timestamps();
         });

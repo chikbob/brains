@@ -2,15 +2,16 @@
 
 namespace App\MoonShine\Resources;
 
-use Illuminate\Database\Eloquent\Model;
 use App\Models\Ticket;
-
-use MoonShine\Resources\Resource;
 use MoonShine\Fields\ID;
-use MoonShine\Actions\FiltersAction;
-use MoonShine\Fields\BelongsTo;
+
+use MoonShine\Fields\Text;
 use MoonShine\Fields\Number;
+use MoonShine\Fields\BelongsTo;
+use MoonShine\Resources\Resource;
 use MoonShine\Fields\SwitchBoolean;
+use MoonShine\Actions\FiltersAction;
+use Illuminate\Database\Eloquent\Model;
 
 class TicketResource extends Resource
 {
@@ -22,10 +23,8 @@ class TicketResource extends Resource
 	{
 		return [
 		    ID::make()->sortable(),
-            BelongsTo::make('Concert', 'concert_id')
+            Text::make('Name', 'title')
             ->required(),
-            SwitchBoolean::make('Avalaible', 'avalaible')
-            ->default(true),
             Number::make('Price', 'price')
             ->required()
         ];
